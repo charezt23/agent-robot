@@ -1,0 +1,9 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "app": "src.graph:app"
+  },
+  "env": ".env"
+}
+
+

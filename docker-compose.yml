@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  agent-core:
+    build: .
+    command: langgraph dev --host 0.0.0.0 --port 8123
+    volumes:
+      - .:/app
+    ports:
+      - "8123:8123"
+    env_file:
+      - .env
+  api-server:
+    container_name: api-server
+    build: .
+    command: uvicorn api_server:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+
+
