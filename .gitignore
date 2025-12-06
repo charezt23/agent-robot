@@ -8,3 +8,4 @@ __pycache__/
 
 # LangGraph
 .langgraph_api/
+*.png

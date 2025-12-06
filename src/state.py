@@ -20,7 +20,6 @@ class AgentState(TypedDict):
     nik: Optional[str]  # NIK pengguna
     
     # Auth & Validation fields
-    token: Optional[str]  # Token dari login
     is_authenticated: Optional[bool]  # Status autentikasi
     auth_status: Optional[str]  # "checking", "needs_ktp", "processing_ocr", "validating", "authenticated", "failed", "skipped"
     
@@ -32,6 +31,13 @@ class AgentState(TypedDict):
     
     # Resident data
     resident_data: Optional[dict]  # Data resident dari API
+    
+    # Letter processing fields
+    letter_custom_data: Optional[dict]  # Custom data untuk surat (keterangan untuk SKTM/SKDP, atau nama_usaha/jenis_usaha/lokasi_usaha untuk SKU)
+    letter_status: Optional[str]  # Status pembuatan surat: "needs_custom_data", "success", "failed", "skipped"
+    letter_data: Optional[dict]  # Data surat hasil dari API
+    download_url_pdf: Optional[str]  # URL untuk download PDF surat
+    letter_number: Optional[str]  # Nomor surat
     
     # Flow control
     next_action: Optional[str]  # Next action: "surat_processing", "end", "auth_required", dll

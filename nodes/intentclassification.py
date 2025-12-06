@@ -137,10 +137,11 @@ def determine_confirmation_level(state: AgentState) -> Tuple[bool, str]:
 
 def check_intent(state: AgentState) -> dict:
     """Check intent dari user message menggunakan LLM - multi-level classification"""
+    from src.state_utils import preserve_state
     user_message = extract_user_message(state)
     
     if not user_message:
-        return {
+        return preserve_state(state, {
             "intent": "Ngobrol",
             "intent_confidence": 0.0,
             "sub_intent": None,
@@ -153,7 +154,7 @@ def check_intent(state: AgentState) -> dict:
             },
             "needs_confirmation": False,
             "confirmation_level": None
-        }
+        })
     
     # Prepare messages untuk LLM
     messages = [
@@ -205,7 +206,7 @@ def check_intent(state: AgentState) -> dict:
         "confidence": round(overall_confidence, 2)  # Overall confidence
     }
     
-    return {
+    return preserve_state(state, {
         "user_message": user_message,
         "intent": intent,
         "intent_confidence": intent_conf,
@@ -216,11 +217,12 @@ def check_intent(state: AgentState) -> dict:
         "needs_confirmation": needs_confirmation,
         "confirmation_level": confirmation_level,
         "intent_result": intent_result
-    }
+    })
 
 
 def handle_ambiguity(state: AgentState) -> dict:
     """Handle ambiguous intent dengan meminta konfirmasi ke user - berbeda per level"""
+    from src.state_utils import preserve_state
     confirmation_level = state.get("confirmation_level")
     intent = state.get("intent", "Ngobrol")
     intent_conf = state.get("intent_confidence", 0.0)
@@ -266,10 +268,10 @@ Silakan balas dengan nama surat yang Anda inginkan (SKTM, SKDP, SKU, atau SPKTP)
     else:
         confirmation_message = "Maaf, saya tidak yakin dengan maksud Anda. Bisakah Anda jelaskan lebih detail?"
     
-    return {
+    return preserve_state(state, {
         "messages": [AIMessage(content=confirmation_message)],
         "needs_confirmation": True
-    }
+    })
 
 
 def should_confirm(state: AgentState) -> str:
@@ -280,7 +282,8 @@ def should_confirm(state: AgentState) -> str:
 
 def finalize_intent(state: AgentState) -> dict:
     """Finalize intent result (tidak perlu konfirmasi)"""
+    from src.state_utils import preserve_state
     # Intent sudah jelas, tidak perlu response message
-    return {
+    return preserve_state(state, {
         "needs_confirmation": False
-    }
+    })

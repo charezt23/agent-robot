@@ -1,0 +1,569 @@
+# python test.py
+✅ KTP File: /app/KTP Example.png
+
+
+====================================================================================================
+  🧪 INTERACTIVE GRAPH FLOW TESTING
+====================================================================================================
+
+📝 INSTRUKSI:
+  - Ketik pesan user (contoh: 'hei, bisa buatin sktm?')
+  - Untuk upload KTP, ketik: 'upload_ktp'
+  - Ketik 'exit' atau 'quit' untuk keluar
+  - Ketik 'clear' untuk reset state
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+👤 USER: hai, aku mau buat sktm bisa?
+
+----------------------------------------------------------------------------------------------------
+  EXECUTING GRAPH (Step 1)
+----------------------------------------------------------------------------------------------------
+
+📊 INPUT STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: None
+     is_authenticated: None
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: hai, aku mau buat sktm bisa?
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+🔄 EXECUTING GRAPH...
+2025-12-05 11:29:54,854 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+
+  🔄 STEP 1: NODE 'check_intent'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: check_intent:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: None
+     is_authenticated: None
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: Layanan
+     intent_confidence: 1.0
+     sub_intent: Surat
+     sub_intent_confidence: 1.0
+     sub_intent_detail: SKTM
+     sub_intent_detail_confidence: 1.0
+     needs_confirmation: False
+     confirmation_level: None
+     intent_result: {
+        "intent": "Layanan",
+        "intent_confidence": 1.0,
+        "sub_intent": "Surat",
+        "sub_intent_confidence": 1.0,
+        "sub_intent_detail": "SKTM",
+        "sub_intent_detail_confidence": 1.0,
+        "confidence": 1.0
+}
+  💬 CONVERSATION:
+     user_message: hai, aku mau buat sktm bisa?
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+  🔄 STEP 2: NODE 'finalize_intent'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: finalize_intent:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: None
+     is_authenticated: None
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: False
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+2025-12-05 11:30:04,503 - httpx - INFO - HTTP Request: GET http://host.docker.internal:5000/api/check-token "HTTP/1.1 200 OK"
+2025-12-05 11:30:04,852 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+
+  🔄 STEP 3: NODE 'check_token_valid'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: check_token_valid:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_ktp
+     is_authenticated: False
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+     📝 LATEST MESSAGE (🤖 AI):
+        Bisa, silakan scan KTP ya, pastikan gambarnya jelas. Kalau tidak, saya nggak bisa proses suratnya. 😊
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+----------------------------------------------------------------------------------------------------
+  FINAL STATE
+----------------------------------------------------------------------------------------------------
+
+📊 FINAL STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_ktp
+     is_authenticated: False
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+💬 RIWAYAT PERCAKAPAN:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  1. 🤖 AI:
+     Bisa, silakan scan KTP ya, pastikan gambarnya jelas. Kalau tidak, saya nggak bisa proses suratnya. 😊
+
+
+🤖 AI: Bisa, silakan scan KTP ya, pastikan gambarnya jelas. Kalau tidak, saya nggak bisa proses suratnya. 😊
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+👤 USER: upload_ktp
+✅ KTP file di-set: /app/KTP Example.png
+
+----------------------------------------------------------------------------------------------------
+  EXECUTING GRAPH (Step 2)
+----------------------------------------------------------------------------------------------------
+
+📊 INPUT STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_ktp
+     is_authenticated: False
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: /app/KTP Example.png
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: KTP berhasil diupload
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+🔄 EXECUTING GRAPH...
+2025-12-05 11:33:45,263 - httpx - INFO - HTTP Request: POST http://host.docker.internal:5000/api/upload-ktp "HTTP/1.1 200 OK"
+2025-12-05 11:33:45,523 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+
+  🔄 STEP 1: NODE 'upload_ktp_for_ocr'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: upload_ktp_for_ocr:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_nik_confirmation
+     is_authenticated: None
+     nik: None
+     extracted_nik: 1172011205820003
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+     📝 LATEST MESSAGE (🤖 AI):
+        NIK yang terdeteksi **1172011205820003**. Sudah benar belum? 😊
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+----------------------------------------------------------------------------------------------------
+  FINAL STATE
+----------------------------------------------------------------------------------------------------
+
+📊 FINAL STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_nik_confirmation
+     is_authenticated: None
+     nik: None
+     extracted_nik: 1172011205820003
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+💬 RIWAYAT PERCAKAPAN:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  1. 🤖 AI:
+     NIK yang terdeteksi **1172011205820003**. Sudah benar belum? 😊
+
+
+🤖 AI: NIK yang terdeteksi **1172011205820003**. Sudah benar belum? 😊
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+👤 USER: sudah
+
+----------------------------------------------------------------------------------------------------
+  EXECUTING GRAPH (Step 3)
+----------------------------------------------------------------------------------------------------
+
+📊 INPUT STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: needs_nik_confirmation
+     is_authenticated: False
+     nik: None
+     extracted_nik: 1172011205820003
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: sudah
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+🔄 EXECUTING GRAPH...
+2025-12-05 11:33:55,151 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+2025-12-05 11:34:00,914 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+
+  🔄 STEP 1: NODE 'handle_nik_confirmation'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: handle_nik_confirmation:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: validating
+     is_authenticated: None
+     nik: 1172011205820003
+     extracted_nik: None
+     nik_confirmed: True
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+     📝 LATEST MESSAGE (🤖 AI):
+        oke, autentikasi berhasil! Sekarang saya bisa bantu buat suratnya 😊
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+2025-12-05 11:34:04,592 - httpx - INFO - HTTP Request: GET http://host.docker.internal:5000/api/resident/1172011205820003 "HTTP/1.1 200 OK"
+
+  🔄 STEP 2: NODE 'check_resident'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: check_resident:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: resident_found
+     is_authenticated: None
+     nik: 1172011205820003
+     extracted_nik: None
+     nik_confirmed: True
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+2025-12-05 11:34:04,723 - httpx - INFO - HTTP Request: POST http://host.docker.internal:5000/api/login-by-nik "HTTP/1.1 200 OK"
+2025-12-05 11:34:04,980 - httpx - INFO - HTTP Request: POST http://192.168.18.115:11434/api/chat "HTTP/1.1 200 OK"
+
+  🔄 STEP 3: NODE 'login_by_nik'
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+📊 NODE STATE: login_by_nik:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: authenticated
+     is_authenticated: True
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+     📝 LATEST MESSAGE (🤖 AI):
+        oke, autentikasi berhasil! Sekarang kamu bisa pilih jenis surat yang ingin dibuat, ya 😊
+     ──────────────────────────────────────────────────────────────────────────────────────────────
+
+----------------------------------------------------------------------------------------------------
+  FINAL STATE
+----------------------------------------------------------------------------------------------------
+
+📊 FINAL STATE:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  🔐 AUTHENTICATION & VALIDATION:
+     auth_status: authenticated
+     is_authenticated: True
+     nik: None
+     extracted_nik: None
+     nik_confirmed: None
+     ktp_image: None
+     extracted_data: None
+     resident_data: None
+  🎯 INTENT CLASSIFICATION:
+     intent: None
+     intent_confidence: None
+     sub_intent: None
+     sub_intent_confidence: None
+     sub_intent_detail: None
+     sub_intent_detail_confidence: None
+     needs_confirmation: None
+     confirmation_level: None
+  💬 CONVERSATION:
+     user_message: None
+     conversation_context: None
+     pending_actions: None
+  📄 LETTER PROCESSING:
+     letter_status: None
+     letter_number: None
+     download_url_pdf: None
+  🔄 FLOW CONTROL:
+     next_action: None
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+
+💬 RIWAYAT PERCAKAPAN:
+  ══════════════════════════════════════════════════════════════════════════════════════════════════
+  1. 🤖 AI:
+     oke, autentikasi berhasil! Sekarang kamu bisa pilih jenis surat yang ingin dibuat, ya 😊
+
+
+🤖 AI: oke, autentikasi berhasil! Sekarang kamu bisa pilih jenis surat yang ingin dibuat, ya 😊
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+👤 USER: ^C
+
+👋 Keluar dari test...
+
+====================================================================================================
+  TEST COMPLETED
+====================================================================================================
